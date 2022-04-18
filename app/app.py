@@ -421,7 +421,7 @@ def login():
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
-        cnx = mysql.connector.connect(user="depy9", password="PASSword@123", host="dep.mysql.database.azure.com", port=3306, database="geeklogin", ssl_ca="C:\\Users\\2019c\\Downloads\\DigiCertGlobalRootCA.crt.pem", ssl_disabled=False)
+        cnx = mysql.connector.connect(user="depy9", password="PASSword@123", host="dep.mysql.database.azure.com", port=3306, database="geeklogin", ssl_ca="DigiCertGlobalRootCA.crt.pem", ssl_disabled=False)
         # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor = cnx.cursor()
         cursor.execute(
@@ -470,7 +470,7 @@ def register():
         email = request.form['email']
         userlevel=request.form['Category']
         # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cnx = mysql.connector.connect(user="depy9", password="PASSword@123", host="dep.mysql.database.azure.com", port=3306, database="geeklogin", ssl_ca="C:\\Users\\2019c\\Downloads\\DigiCertGlobalRootCA.crt.pem", ssl_disabled=False)
+        cnx = mysql.connector.connect(user="depy9", password="PASSword@123", host="dep.mysql.database.azure.com", port=3306, database="geeklogin", ssl_ca="DigiCertGlobalRootCA.crt.pem", ssl_disabled=False)
         # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor = cnx.cursor()
         cursor.execute(

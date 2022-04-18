@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <style>
+    .bg-container {
+      background-color: #52606d;
+      background-size: cover;
+      height: 220vh;
+    }
+
+    .card {
+      background-color: #323f4b;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .Image {
+      height: 53px;
+      width: 50px;
+    }
+
+    .section-heading1 {
+      color: #cced00;
+      font-size: 22px;
+      font-family: "Roboto";
+      font-weight: 600;
+    }
+
+    .section-heading2 {
+      color: white;
+      font-size: 40px;
+      font-family: "Roboto";
+      font-weight: 700;
+    }
+
+    .card-heading {
+      color: white;
+      font-size: 25px;
+      font-family: "Roboto";
+      font-weight: 600;
+      padding-top: 10px;
+    }
+
+    .card-description {
+      color: #9aa5b1;
+      font-size: 20px;
+      font-family: "Roboto";
+      font-weight: 500;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      width: 100%;
+      overflow: auto;
+      box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: #000000;
+      padding: 5px;
+      text-decoration: none;
+      background-color: antiquewhite;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div align="left">
+      <h4>भारतीय प्रौद्योगिकी संस्थान रोपड़<br>
+        INDIAN INSTITUTE OF TECHNOLOGY ROPAR</h4>
+      <h6><strong>Indent for Purchases Below Rs. 25000</strong></h6>
+    </div>
+    <div align="right">
+      <div style="padding: 10px; text-align: center;" class="border">
+        <div class="dropdown">
+          <h4 class="bottom">
+            Hi {{session.username}}!
+          </h4>
+          <div class="dropdown-content" style="text-align: left;">
+            <a href="#">My Applications</a>
+            <a href="#">Contact us</a>
+            <a href="{{ url_for('logout') }}" class="btn" style="text-align: left;">
+              <h6>Logout<h6>
+            </a>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </nav>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">S.N</th>
+        <th scope="col">Application Id</th>
+        <th scope="col">Date</th>
+        <th scope="col">Status</th>
+        
+        <th scope="col">View Form</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dict_item in parent_list %}
+      <tr>
+          <td>{{dict_item[0]}}</td>
+          <td><a href="/preview/{{dict_item[1]}}">{{dict_item[1]}}</a></td>
+          <td>{{dict_item[2]}}</td>
+          <td>{{dict_item[3]}}</td>
+          
+          <td><a href="/preview/{{dict_item[1]}}"><button >View Form</button></a></td>
+      </tr>
+        {% endfor %}
+
+
+    </tbody>
+  </table>
+  <div align="center">
+    <a href="/form"><button class="btn btn-primary" > Apply New </button></a>
+  </div>
+
+</body>
+
+</html>

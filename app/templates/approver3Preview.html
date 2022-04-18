@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .bg-container {
+            padding: 6px;
+            background-color: white;
+        }
+
+        input {
+            border-width: 0px;
+        }
+
+        .jumbotron {
+            background-color: white;
+            width: 85%;
+            padding-left: 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-container">
+        <div align="center">
+            <h4>भारतीय प्रौद्योगिकी संस्थान रोपड़<br>
+                INDIAN INSTITUTE OF TECHNOLOGY ROPAR</h4>
+            <h6><strong>Indent for Purchases Below Rs. 25000</strong></h6>
+        </div>
+        <div class="jumbotron">
+            <form class="form-group" method="get">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <p></p>
+                    <span> Date: {{dict_item["date"]}}</span>
+                </div>
+                <div style="width: 100%;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Indenter’s Name & Deptt :</p>
+                        <span>
+                            <p>{{dict_item["Indenter"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Budget Head & Sanctioned Budget :</p>
+                        <span>
+                            <p>{{dict_item["Budget"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Approx Cost :</p>
+                        <span>
+                            <p>{{dict_item["Cost"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Name of the Item (Attach list in case the no of
+                            items are more) : </p>
+                        <span>
+                            <p>{{dict_item["Item"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Category :</p>
+                        <span>
+                            <p>{{dict_item["Category"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Budgetary Approval Enclosed :</p>
+                        <span>
+                            <p>{{dict_item["Budgetary_Approval"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Certified that the space is ready for
+                            installation of the equipment in
+                            Deptt/Centre/Unit on its arrival :</p>
+                        <span>
+                            <p>{{dict_item["is_space_ready"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Is Goods are for Research Purpose :</p>
+                        <span>
+                            <p>{{dict_item["is_for_research"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>GeM Purchase :</p>
+                        <span>
+                            <p>{{dict_item["GeM_Purchase"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>Mode of Enquiry :</p>
+                        <span>
+                            <p>{{dict_item["Mode_of_Enquiry"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>No. of Quotation(s) received : </p>
+                        <span>
+                            <p>{{dict_item["no_of_quotations"]}}</p>
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <p>The indenter recommends the purchase of the following items from
+                            <span>{{dict_item["item_recom"]}} </span> against
+                            quotation no: <span> {{dict_item["quotation_no"]}}</span> dated <span>
+                                {{dict_item["gate"]}}</span>. Quotation(s) has/have been
+                            signed by the
+                            committee members.
+                        </p>
+                    </div>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">SL.</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Rate</th>
+                                <th scope="col">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tBody">
+                            <tr>
+                                <td>1</td>
+                                <td>{{dict_item["input0name0"]}}</td>
+                                <td>{{dict_item["input1name0"]}}</td>
+                                <td>{{dict_item["input2name0"]}}</td>
+                                <td>{{dict_item["input3name0"]}}</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Tax@</td>
+                                <td>{{dict_item["tax"]}}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Total</td>
+                                <td>{{dict_item["total"]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p>Recommended Mode of Payment :</p>
+                    <span> {{dict_item["mode_of_payment"]}}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p>Delivery Period :</p>
+                    <span> {{dict_item["delivery_period"]}}</span>
+                </div>
+            </form>
+            <form class="form-group" action="/approver3Action/{{dict_item['appId']}}" method="post">
+                <div align="center" style="margin-top: 8%;">
+                    <a href="/form"><button class="btn btn-primary" type="submit" name="submit" value="add"> Back
+                        </button></a>
+                    <a href="#"><button class="btn btn-primary" type="submit" name="submit" value="approved"> Approve
+                        </button></a>
+                    <a href="#"><button class="btn btn-primary" type="submit" name="submit" value="rejected"> Reject
+                        </button></a>
+                    <!-- <button class="btn btn-primary" type="submit" name="submit" value="add"> Save as Draft </button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

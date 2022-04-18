@@ -1,0 +1,48 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> Login </title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<div class="main-w3layouts wrapper" align="center">
+		<div align="center" style="width: 50%; justify-content: center;" class="agileits-top">
+			<div align="center" class="border>
+					<div class=" header">
+				<h1 class="word">Login</h1>
+			</div></br>
+			<h2 class="agileits-top word">
+				<form action="{{ url_for('login') }}" method="post">
+					<div class="msg">{{ msg }}</div>
+					<input id="username" name="username" type="text" placeholder="Enter Your Username"
+						class="text" /></br></br>
+					<input id="password" name="password" type="password" placeholder="Enter Your Password"
+						class="text" /></br></br>
+					<input type="submit" class="btn" value="Sign In"></br>
+					<p class="bottom">Dont't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up
+							here</a></p>
+				</form>
+			</h2>
+		</div>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	</div>
+</body>
+
+</html>

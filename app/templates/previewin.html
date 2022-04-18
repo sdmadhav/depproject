@@ -200,48 +200,47 @@
                     </div>
                     <div class="col-md-10 col-sm-6">
                         <div class="jumbotron">
-                            <form class="form-group" action="/action/{{session.username}}" method="post">
+                            <form class="form-group" method="get">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <p></p>
+                                    <span> Date: {{dict_item["date"]}}</span>
+                                </div>
                                 <div style="width: 100%;">
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Indenter’s Name & Deptt :</p>
-                                        <span> <input type="text" id="Indenter" name="Indenter" required></span>
+                                        <span>
+                                            <p>{{dict_item["Indenter"]}}</p>
+                                        </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Budget Head & Sanctioned Budget :</p>
-                                        <span> <input type="text" id="Budget" name="Budget" required></span>
+                                        <span>
+                                            <p>{{dict_item["Budget"]}}</p>
+                                        </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Approx Cost :</p>
-                                        <span> <input type="text" id="Cost" name="Cost" required></span>
+                                        <span>
+                                            <p>{{dict_item["Cost"]}}</p>
+                                        </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Name of the Item (Attach list in case the no of
                                             items are more) : </p>
-                                        <span> <input type="text" id="Item" name="Item" required></span>
+                                        <span>
+                                            <p>{{dict_item["Item"]}}</p>
+                                        </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Category :</p>
                                         <span>
-                                            <input type="radio" id="Category" name="Category" value="Consumables">
-                                            <label for="Category"> Consumables</label>
-                                            <t></t>
-                                            <input type="radio" id="Category" name="Category" value="LTA">
-                                            <label for="Category"> LTA </label>
-                                            <t></t>
-                                            <input type="radio" id="Category" name="Category" value="Non-Consumables">
-                                            <label for="Category"> Non-Consumables</label><br>
+                                            <p>{{dict_item["Category"]}}</p>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Budgetary Approval Enclosed :</p>
                                         <span>
-                                            <input type="radio" id="Budgetary_Approval" name="Budgetary_Approval"
-                                                value="Yes">
-                                            <label for="Budgetary_Approval"> Yes</label>
-                                            <t></t>
-                                            <input type="radio" id="Budgetary_Approval" name="Budgetary_Approval"
-                                                value="No">
-                                            <label for="Budgetary_Approval"> No</label><br>
+                                            <p>{{dict_item["Budgetary_Approval"]}}</p>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
@@ -249,77 +248,43 @@
                                             installation of the equipment in
                                             Deptt/Centre/Unit on its arrival :</p>
                                         <span>
-                                            <input type="radio" id="is_space_ready" name="is_space_ready" value="Yes">
-                                            <label for="is_space_ready"> YES </label>
-                                            <t></t>
-                                            <input type="radio" id="is_space_ready" name="is_space_ready" value="No">
-                                            <label for="is_space_ready"> NO </label>
-                                            <t></t>
-                                            <input type="radio" id="is_space_ready" name="is_space_ready" value="NA">
-                                            <label for="is_space_ready"> NA </label><br>
+                                            <p>{{dict_item["is_space_ready"]}}</p>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Is Goods are for Research Purpose :</p>
                                         <span>
-                                            <input type="radio" id="is_for_research" name="is_for_research" value="Yes">
-                                            <label for="is_for_research"> YES </label>
-                                            <t></t>
-                                            <input type="radio" id="is_for_research" name="is_for_research" value="No">
-                                            <label for="is_for_research"> NO </label><br>
+                                            <p>{{dict_item["is_for_research"]}}</p>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>GeM Purchase :</p>
                                         <span>
-                                            <input type="radio" id="GeM_Purchase" name="GeM_Purchase" value="Yes">
-                                            <label for="GeM_Purchase"> YES </label>
-                                            <t></t>
-                                            <input type="radio" id="GeM_Purchase" name="GeM_Purchase" value="No">
-                                            <label for="GeM_Purchase"> NO </label><br>
+                                            <p>{{dict_item["GeM_Purchase"]}}</p>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>Mode of Enquiry :</p>
                                         <span>
-                                            <input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry"
-                                                value="Telephone">
-                                            <label for="Mode_of_Enquiry"> Telephone </label>
-                                            <t></t>
-                                            <input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry"
-                                                value="E-mail">
-                                            <label for="Mode_of_Enquiry"> E-mail</label>
-                                            <t></t>
-                                            <input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry"
-                                                value="Spot Visit">
-                                            <label for="Mode_of_Enquiry"> Spot Visit </label>
-                                            <t></t>
-                                            <input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry" value="GeM">
-                                            <label for="Mode_of_Enquiry"> GeM </label>
-                                            <t></t>
-                                            <input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry"
-                                                value="Vendor’s Website">
-                                            <label for="Mode_of_Enquiry"> Vendor’s Website </label><br>
+                                            <p>{{dict_item["Mode_of_Enquiry"]}}</p>
                                         </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
                                         <p>No. of Quotation(s) received : </p>
-                                        <span> <input type="text" id="no_of_quotations" name="no_of_quotations"
-                                                required></span>
+                                        <span>
+                                            <p>{{dict_item["no_of_quotations"]}}</p>
+                                        </span>
                                     </div>
                                     <div style="display: flex; justify-content: space-between;">
-                                        <p>The indenter recommends the purchase of the following items from Mr/Ms.
-                                            <span> <input type="text" id="item_recom" name="item_recom" required></span>
-                                            against
-                                            quotation no: <span> <input type="number" id="quotation_no"
-                                                    name="quotation_no" required></span>
-                                            dated <span> <input type="date" id="gate" name="gate" required></span>.
-                                            Quotation(s)
-                                            has/have been signed by the committee members.
+                                        <p>The indenter recommends the purchase of the following items from <span>{{dict_item["item_recom"]}} </span> against
+                                            quotation no: <span> {{dict_item["quotation_no"]}}</span> dated <span>
+                                                {{dict_item["gate"]}}</span>. Quotation(s) has/have been
+                                            signed by the
+                                            committee members.
                                         </p>
                                     </div>
-                                    <div class="" style="overflow: hidden;">
-                                        <table class="table table-bordered">
+                        
+                                    <table class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th scope="col">SL.</th>
@@ -331,95 +296,48 @@
                                         </thead>
                                         <tbody id="tBody">
                                             <tr>
-                                                <td>
-                                                    <p>1</p>
-                                                </td>
-                                                <td><textarea class="textarea resize-ta" name="input0name0"></textarea>
-                                                </td>
-                                                <td><input type="text" name="input1name0" /></td>
-                                                <td><input type="text" name="input2name0" /></td>
-                                                <td><input type="text" name="input3name0" id="1" />
-                                                    <!-- <button onclick="ClickToAdd()">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                                        class="bi bi-plus-lg" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd"
-                                                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-                                                    </svg>
-                                                </button> -->
-                                                </td>
+                                                <td>1</td>
+                                                <td>{{dict_item["input0name0"]}}</td>
+                                                <td>{{dict_item["input1name0"]}}</td>
+                                                <td>{{dict_item["input2name0"]}}</td>
+                                                <td>{{dict_item["input3name0"]}}</td>
                                             </tr>
                                         </tbody>
-
-
+                        
+                        
                                         <tbody>
                                             <tr>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>Tax@</td>
-                                                <td><input type="text" name="tax" /></td>
+                                                <td>{{dict_item["tax"]}}</td>
                                             </tr>
                                             <tr>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <!-- <td><button onclick="calculateTotal()">Total</button></td> -->
                                                 <td>Total</td>
-                                                <td><input type="text" name="total" id="total" /></td>
+                                                <td>{{dict_item["total"]}}</td>
                                             </tr>
                                         </tbody>
-                                        </table>
-                                    </div>
+                                    </table>
                                 </div>
                                 <div style="display: flex; justify-content: space-between;">
                                     <p>Recommended Mode of Payment :</p>
-                                    <span> <input type="text" id="mode_of_payment" name="mode_of_payment"
-                                            required></span>
+                                    <span> {{dict_item["mode_of_payment"]}}</span>
                                 </div>
                                 <div style="display: flex; justify-content: space-between;">
                                     <p>Delivery Period :</p>
-                                    <span> <input type="text" id="delivery_period" name="delivery_period"
-                                            required></span>
-                                </div>
-                                <p>
-                                </p>
-                                <div class="tacbox">
-                                    <input id="checkbox" type="checkbox" />
-                                    <label for="checkbox">
-                                        <p>1. The Purchase committees may be constituted as per Store and Purchase
-                                            manual’s
-                                            Rule No. 7 before initializing the
-                                            purchase in order to effect this purchase. The relevant provision for
-                                            constitution committee can be
-                                            assessed at Store and Purchase website: <a href="https://www.iitrpr.ac.in">
-                                                www.iitrpr.ac.in</a></p>
-                                        <p>2.As per this Office Memorandum No.F.1/26//2018-PPD dated.02.04.2019 received
-                                            from the Ministry of
-                                            Finance,
-                                            Department of Expenditure, Procurement Policy Division that Common Use Goods
-                                            and Services are to be
-                                            procured mandatorily through GeM as per GFR Rule 147 & 149 and institute
-                                            office order No.1412-19/ADMN-GeM/PS/487 dt.05.02.2020.
-                                        </p>
-                                        <p>3. The procurement of the second laptop from the Department Fund subject to
-                                            the circular no.
-                                            Reg-1/2018/IITRPR/167
-                                            dated 31.08.2018. As per circular, the faculty member can procure second
-                                            laptop only after four
-                                            years of first procurement irrespective of the source of funding like
-                                            institute/CPDA. This will not be applicable
-                                            on the procurement of laptops from the projects.</p>
-                                        <p>4. All the purchases of furniture should be done through Store and Purchase
-                                            Section as per the
-                                            circular no. 752 dated 17.02.2020.</p>
-                                    </label>
-                                </div>
-                                <div align="center" style="margin-top: 8%;">
-                                    <button class="btn btn-primary" type="submit" name="submit" value="add"> submit
-                                    </button>
+                                    <span> {{dict_item["delivery_period"]}}</span>
                                 </div>
                             </form>
-
+                            <div align="center" style="margin-top: 8%;">
+                                <form action="/myapplications/{{session.username}}">
+                                    <input type="button" value="Go back!">
+                                </form>    
+                            </div>
+                        
                         </div>
                     </div>
                 </div>

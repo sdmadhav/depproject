@@ -437,13 +437,13 @@ def login():
             if (account[4]==0):
                 return redirect(url_for('myapplications',username=session['username']))
             elif (account[4]==1):
-                return redirect(url_for('approversA1',username=session['username']))
+                return redirect(url_for('approversP1',username=session['username']))
             elif (account[4]==2):
-                return redirect(url_for('approversA2',username=session['username']))
+                return redirect(url_for('approversP2',username=session['username']))
             elif (account[4]==3):
-                return redirect(url_for('approversA3',username=session['username']))                
+                return redirect(url_for('approversP3',username=session['username']))                
             elif (account[4]==4):
-                return redirect(url_for('approversA4',username=session['username']))
+                return redirect(url_for('approversP4',username=session['username']))
         else:
             msg = 'Incorrect username / password !'
     return render_template('login.html',msg=msg)

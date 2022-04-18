@@ -326,7 +326,7 @@
     <div>
         <div class="topbar">
             <div style="background-color: bisque;">
-                <h3 class="Main-Heading"><img src="https://www.iitrpr.ac.in/sites/default/files/image.jpg" class="Image" /> J.S./Supdt (P) Dashboard</h3>
+                <h3 class="Main-Heading"><img src="https://www.iitrpr.ac.in/sites/default/files/image.jpg" class="Image" /> J.S./Supdt Dashboard</h3>
             </div>
         </div>
         <div class="container">
@@ -341,10 +341,10 @@
                                 <div class="mt-1">
                                     <h3>{{session.username}}</h3>
                                     <hr style="border-color: white;">
-                                    <a class="nav-link active" href="/approversP1/{{session.username}}" >Pending Requests<span
+                                    <a class="nav-link active" href="/approversP1/{{session.username}}" >Pending<span
                                         class="sr-only">(current)</span></a>
-                                    <a class="nav-link" href="/approversA1/{{session.username}}" >Approved Requests</a>
-                                    <a class="nav-link" href="/approversR1/{{session.username}}" >Rejected Requests</a>
+                                    <a class="nav-link" href="/approversA1/{{session.username}}" >Approved</a>
+                                    <a class="nav-link" href="/approversR1/{{session.username}}" >Rejected</a>
                                     <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
                                 </div>
                             </div>
@@ -365,7 +365,7 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <a href="/preview/{{dict_item[1]}}"><button class="btn-primary">View
+                                                <a href="/approver1Preview/{{dict_item[1]}}"><button class="btn-primary">View
                                                         Application</button></a>
                                             </div>
                                         </div>
@@ -375,12 +375,8 @@
                             {% endfor %}
                         </div>
 
-                        <a href="/form" ><button class="box stack-top rounded-circle tooltip">
-                            <img src="https://as2.ftcdn.net/v2/jpg/00/70/16/29/1000_F_70162903_5mFpUbO3ZfRyD4gslH8j2c5VxjGMKU9G.jpg"
-                            class="rounded-circle plus-image" align="center">
-                            <span class="tooltiptext" style="color: aqua;background-color: black; text-align: center;padding: 2px;" >New</span>
-                            </button></a>
-                    </div> -->
+                        
+                    </div> 
                     
                 </div>
             </div>

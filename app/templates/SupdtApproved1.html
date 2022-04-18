@@ -1,93 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supdt</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-    <style>
-        .Nav-bar{
-            text-align: center;
-        }
-        .bg-container{
-            padding-left: 5px;
-            padding-right: 5px;
-            background-size: cover;
-            height: 100vh;
-        }
-        .Bottom{
-            background-color: #0000ab;
-            height: 250px;
-            width: 100%;
-            color: white;
-            text-align: center;
-            padding-top: 20px;
-        }
-        .Pending-App{
-            display: table;
-        }
-        /* .Approved-App{
-            display: none;
-        } */
-        .Rejected-App{
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="bg-container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="justify-content: space-between;">
-            <a class="navbar-brand" href="#">Dashboard</a>
-            <div>
-                <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="text-align: end;">
-                <div class="navbar-nav text-end m-auto">
-                    <a class="nav-link active" href="/pendingApp" onclick="PendingFun()">Pending Requests<span class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="/approvedApp" onclick="ApprovedFun()">Approved Requests</a>
-                    <a class="nav-link" href="/rejectedApp" onclick="RejectedFun()">Rejected Requests</a>
-                    <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
-                </div>
-            </div>
-        </nav>
-        <div>
-            
-            <table class="table table-striped table-dark Approved-App" id="approvedApp">
-                <thead>
-                <tr>
-                    <th scope="col">S.l.</th>
-                    <th scope="col">Application Id</th>
-                    <th scope="col">Indenter Name</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">View</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td><a href="#">KFGHRDDIVNKWERR</a></td>
-                    <td>Madhav</td>
-                    <td>28/03/2022</td>
-                    <td><a href="#">View Application</a></td>
-                </tr>
-                
-                
-                </tbody>
-            </table>
-            
-        </div>
-    </div>
-
-</body>
-</html> -->
+<!-- 
 
 <!DOCTYPE html>
 <html>
@@ -234,4 +145,247 @@
 
 
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            /* margin-top: 10px; */
+            background-color: lightgrey;
+        }
+
+        .main {
+            /* padding: 15px; */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topbar {
+            background-color: teal;
+            overflow: hidden;
+            position: sticky;
+            z-index: 1;
+            top: 0;
+        }
+
+        .topbar a {
+            float: right;
+            color: whitesmoke;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 26px;
+        }
+
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .sidebar a {
+            margin-left: 10px;
+            display: block;
+            color: white;
+            padding-bottom: 10px;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        .card {
+            /* position: relative; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            background-color: whitesmoke;
+            height: 100%;
+            box-shadow: 5px 10px;
+            scrollbar-shadow-color: bisque;
+        }
+
+        .plus-image {
+            height: 50px;
+            width: 50px;
+        }
+
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+
+        .stack-top {
+            position: fixed;
+            height: 50px;
+            width: 50px;
+            border-width: 0px;
+            z-index: 9;
+            margin-top: 37%;
+            margin-left: 94%;
+            background-color: lightgrey;
+        }
+
+        .stack-top:hover .plus-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .Main-Heading {
+            animation: TextMove 17s infinite;
+            height: 70px;
+            width: 70px;
+            margin-bottom: 30px;
+            background-color: bisque;
+        }
+
+        .Image {
+            height: 70px;
+            width: 70px;
+            animation: logoMove;
+        }
+
+
+        @keyframes TextMove {
+            from {
+                margin-left: 100%;
+                width: 100%;
+            }
+
+            45% {
+                font-size: 300%;
+                margin-left: 25%;
+                width: 100%;
+            }
+
+            to {
+                margin-left: -20%;
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .stack-top {
+                margin-top: 800%;
+                margin-left: 99%;
+            }
+        }
+
+        .content:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .tooltip {
+            /* position: relative; */
+            display: inline-block;
+            border-left: 1px dotted black;
+            font-weight: bold;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="topbar">
+            <div style="background-color: bisque;">
+                <h3 class="Main-Heading"><img src="https://www.iitrpr.ac.in/sites/default/files/image.jpg" class="Image" /> J.S./Supdt (P) Dashboard</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main">
+
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 mt-1">
+                        <div class="card text-center sidebar">
+                            <div class="card-body">
+                                <img src="https://pic.onlinewebfonts.com/svg/img_329115.png" class="rounded-circle"
+                                    width="150" />
+                                <div class="mt-1">
+                                    <h3>{{session.username}}</h3>
+                                    <hr style="border-color: white;">
+                                    <a class="nav-link active" href="/approversP1/{{session.username}}" >Pending Requests<span
+                                        class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/approversA1/{{session.username}}" >Approved Requests</a>
+                                    <a class="nav-link" href="/approversR1/{{session.username}}" >Rejected Requests</a>
+                                    <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-sm-6"> 
+                        <div class="row">
+                            {% for dict_item in parent_list %}
+                            <div class="col-md-4 col-sm-12 mt-3 pt-3">
+                                <div class="card mb-1 content">
+                                    <h6 class="m-3 pt-3">{{dict_item[1]}}</h6>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h6>{{dict_item[2]}}</h6>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <a href="/preview/{{dict_item[1]}}"><button class="btn-primary">View
+                                                        Application</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <a href="/form" ><button class="box stack-top rounded-circle tooltip">
+                            <img src="https://as2.ftcdn.net/v2/jpg/00/70/16/29/1000_F_70162903_5mFpUbO3ZfRyD4gslH8j2c5VxjGMKU9G.jpg"
+                            class="rounded-circle plus-image" align="center">
+                            <span class="tooltiptext" style="color: aqua;background-color: black; text-align: center;padding: 2px;" >New</span>
+                            </button></a>
+                    </div> -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

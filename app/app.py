@@ -539,7 +539,7 @@ def basic(username):
             todo = db.child("form").get()
             print(todo)
             to = todo.val()
-            return render_template('previewin.html', dict_item=dic)
+            return render_template('preview.html', dict_item=dic)
         elif request.form['submit'] == 'delete':
             db.child("form").remove()
         return redirect(url_for('login'))

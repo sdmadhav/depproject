@@ -108,7 +108,8 @@ def myapplications(username):
                 j=j+1
     except:
         pass
-    return render_template("indenterDashboard.html", parent_list=mydic)
+    # return render_template("indenterDashboard.html", parent_list=mydic)
+    return render_template("sakhd.html", parent_list=mydic)
 
 
 
@@ -450,7 +451,7 @@ def login():
 
 @app.route('/form')
 def form():
-    return render_template('index.html')
+    return render_template('form.html')
 
 
 @app.route('/logout')

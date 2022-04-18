@@ -412,7 +412,7 @@ def approver4Action(appId):
 @app.route('/preview/<appId>')
 def applicationReview(appId):
     todo = db.child("form").child(appId).get()
-    return render_template("preview.html", dict_item=todo.val())
+    return render_template("previewin.html", dict_item=todo.val())
 
 
 @app.route('/')

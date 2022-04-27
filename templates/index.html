@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Indent for Purchases Below Rs. 25000</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+	<style>
+		.tacbox {
+			display: block;
+			padding: 2em;
+			margin: 2em;
+			border: 3px solid #ddd;
+			background-color: #eee;
+			max-width: 1000px;
+		}
+		input {
+			border-width: 0px;
+		}
+
+		.dropdown {
+			display: inline-block;
+			position: relative;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			width: 100%;
+			overflow: auto;
+			box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		.dropdown-content a {
+			display: block;
+			color: #000000;
+			padding: 5px;
+			text-decoration: none;
+			background-color: antiquewhite;
+		}
+
+		.textarea {
+			border: 1px solid #ccc;
+			font-family: inherit;
+			font-size: inherit;
+			padding: 1px 6px;
+			background-color: white;
+			width: 200px;
+		}
+
+		.textarea[contenteditable]:empty::before {
+			color: gray;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div align="left">
+			<h4>भारतीय प्रौद्योगिकी संस्थान रोपड़<br>
+				INDIAN INSTITUTE OF TECHNOLOGY ROPAR</h4>
+			<h6><strong>Indent for Purchases Below Rs. 25000</strong></h6>
+		</div>
+		<div align="right">
+			<div style="padding: 10px; text-align: center;" class="border">
+				<div class="dropdown">
+					<h4 class="bottom">
+						Hi {{session.username}}!
+					</h4>
+					<div class="dropdown-content" style="text-align: left;">
+						<a href="#">My Profile</a>
+						<a href="/myapplications/{{session.username}}">My Applications</a>
+						<a href="#">Contact us</a>
+						<a href="{{ url_for('logout') }}" class="btn" style="text-align: left;">
+							<h6>Logout<h6>
+						</a>
+					</div>
+				</div>
+				<br />
+
+			</div>
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<form class="form-group" action="/action/{{session.username}}" method="post">
+			<div style="width: 100%;">
+				<div style="display: flex; justify-content: space-between;">
+					<p>Indenter’s Name & Deptt :</p>
+					<span> <input type="text" id="Indenter" name="Indenter" required></span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Budget Head & Sanctioned Budget :</p>
+					<span> <input type="text" id="Budget" name="Budget" required></span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Approx Cost :</p>
+					<span> <input type="text" id="Cost" name="Cost" required></span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Name of the Item (Attach list in case the no of
+						items are more) : </p>
+					<span> <input type="text" id="Item" name="Item" required></span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Category :</p>
+					<span>
+						<input type="radio" id="Category" name="Category" value="Consumables">
+						<label for="Category"> Consumables</label>
+						<t></t>
+						<input type="radio" id="Category" name="Category" value="LTA">
+						<label for="Category"> LTA </label>
+						<t></t>
+						<input type="radio" id="Category" name="Category" value="Non-Consumables">
+						<label for="Category"> Non-Consumables</label><br>
+					</span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Budgetary Approval Enclosed :</p>
+					<span>
+						<input type="radio" id="Budgetary_Approval" name="Budgetary_Approval" value="Yes">
+						<label for="Budgetary_Approval"> Yes</label>
+						<t></t>
+						<input type="radio" id="Budgetary_Approval" name="Budgetary_Approval" value="No">
+						<label for="Budgetary_Approval"> No</label><br>
+					</span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Certified that the space is ready for
+						installation of the equipment in
+						Deptt/Centre/Unit on its arrival :</p>
+					<span>
+						<input type="radio" id="is_space_ready" name="is_space_ready" value="Yes">
+						<label for="is_space_ready"> YES </label>
+						<t></t>
+						<input type="radio" id="is_space_ready" name="is_space_ready" value="No">
+						<label for="is_space_ready"> NO </label>
+						<t></t>
+						<input type="radio" id="is_space_ready" name="is_space_ready" value="NA">
+						<label for="is_space_ready"> NA </label><br>
+					</span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Is Goods are for Research Purpose :</p>
+					<span>
+						<input type="radio" id="is_for_research" name="is_for_research" value="Yes">
+						<label for="is_for_research"> YES </label>
+						<t></t>
+						<input type="radio" id="is_for_research" name="is_for_research" value="No">
+						<label for="is_for_research"> NO </label><br>
+					</span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>GeM Purchase :</p>
+					<span>
+						<input type="radio" id="GeM_Purchase" name="GeM_Purchase" value="Yes">
+						<label for="GeM_Purchase"> YES </label>
+						<t></t>
+						<input type="radio" id="GeM_Purchase" name="GeM_Purchase" value="No">
+						<label for="GeM_Purchase"> NO </label><br>
+					</span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>Mode of Enquiry :</p>
+					<span>
+						<input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry" value="Telephone">
+						<label for="Mode_of_Enquiry"> Telephone </label>
+						<t></t>
+						<input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry" value="E-mail">
+						<label for="Mode_of_Enquiry"> E-mail</label>
+						<t></t>
+						<input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry" value="Spot Visit">
+						<label for="Mode_of_Enquiry"> Spot Visit </label>
+						<t></t>
+						<input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry" value="GeM">
+						<label for="Mode_of_Enquiry"> GeM </label>
+						<t></t>
+						<input type="radio" id="Mode_of_Enquiry" name="Mode_of_Enquiry" value="Vendor’s Website">
+						<label for="Mode_of_Enquiry"> Vendor’s Website </label><br>
+					</span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>No. of Quotation(s) received : </p>
+					<span> <input type="text" id="no_of_quotations" name="no_of_quotations" required></span>
+				</div>
+				<div style="display: flex; justify-content: space-between;">
+					<p>The indenter recommends the purchase of the following items from Mr/Ms. <span> <input type="text"
+								id="item_recom" name="item_recom" required></span> against
+						quotation no: <span> <input type="number" id="quotation_no" name="quotation_no" required></span>
+						dated <span> <input type="date" id="gate" name="gate" required></span>. Quotation(s)
+						has/have been signed by the committee members.
+					</p>
+				</div>
+
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">SL.</th>
+							<th scope="col">Description</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Rate</th>
+							<th scope="col">Amount</th>
+						</tr>
+					</thead>
+					<tbody id="tBody">
+						<tr>
+							<td>
+								<p>1</p>
+							</td>
+							<td><textarea class="textarea resize-ta" name="input0name0"></textarea></td>
+							<td><input type="text" name="input1name0" /></td>
+							<td><input type="text" name="input2name0" /></td>
+							<td><input type="text" name="input3name0" id="1" />
+								<!-- <button onclick="ClickToAdd()">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-plus-lg" viewBox="0 0 16 16">
+										<path fill-rule="evenodd"
+											d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+									</svg>
+								</button> -->
+							</td>
+						</tr>
+					</tbody>
+
+
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>Tax@</td>
+							<td><input type="text" name="tax" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<!-- <td><button onclick="calculateTotal()">Total</button></td> -->
+							<td>Total</td>
+							<td><input type="text" name="total" id="total" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="display: flex; justify-content: space-between;">
+				<p>Recommended Mode of Payment :</p>
+				<span> <input type="text" id="mode_of_payment" name="mode_of_payment" required></span>
+			</div>
+			<div style="display: flex; justify-content: space-between;">
+				<p>Delivery Period :</p>
+				<span> <input type="text" id="delivery_period" name="delivery_period" required></span>
+			</div>
+			<p>
+			</p>
+			<div class="tacbox">
+				<input id="checkbox" type="checkbox" />
+				<label for="checkbox"><p>1. The Purchase committees may be constituted as per Store and Purchase manual’s
+					Rule No. 7 before initializing the
+					purchase in order to effect this purchase. The relevant provision for constitution committee can be
+					assessed at Store and Purchase website: <a href="https://www.iitrpr.ac.in"> www.iitrpr.ac.in</a></p>
+				<p>2.As per this Office Memorandum No.F.1/26//2018-PPD dated.02.04.2019 received from the Ministry of
+					Finance,
+					Department of Expenditure, Procurement Policy Division that Common Use Goods and Services are to be
+					procured mandatorily through GeM as per GFR Rule 147 & 149 and institute office order No.1412-19/ADMN-GeM/PS/487 dt.05.02.2020.
+				</p>
+				<p>3. The procurement of the second laptop from the Department Fund subject to the circular no.
+					Reg-1/2018/IITRPR/167
+					dated 31.08.2018. As per circular, the faculty member can procure second laptop only after four
+					years of first procurement irrespective of the source of funding like institute/CPDA. This will not be applicable
+					on the procurement of laptops from the projects.</p>
+				<p>4. All the purchases of furniture should be done through Store and Purchase Section as per the
+					circular no. 752 dated 17.02.2020.</p></label>
+			</div>
+			<div align="center" style="margin-top: 8%;">
+				<button class="btn btn-primary" type="submit" name="submit" value="add"> submit </button>
+			</div>
+		</form>
+
+	</div>
+	<!-- <script>
+
+		// Adding table part
+
+		let tBodyEl = document.getElementById("tBody");
+
+		let trEl = document.createElement('tr');
+		let tdEl1 = document.createElement('td');
+		let pEl = document.createElement('p');
+		pEl.id = "Se-No";
+		pEl.textContent = 0;
+		tdEl1.appendChild(pEl);
+
+		let tdEl2 = document.createElement('td');
+		let textareaEl = document.createElement('textarea');
+		textareaEl.classList.add("textarea", "resize-ta");
+		tdEl2.appendChild(textareaEl);
+
+		let tdEl3 = document.createElement('td');
+		let inputEl1 = document.createElement('input');
+		inputEl1.type = "text";
+		tdEl3.appendChild(inputEl1);
+
+		let tdEl4 = document.createElement('td');
+		let inputEl2 = document.createElement('input');
+		inputEl2.type = "text";
+		tdEl4.appendChild(inputEl2);
+
+		let tdEl5 = document.createElement('td');
+		let inputEl3 = document.createElement('input');
+		inputEl3.type = "text";
+		tdEl5.appendChild(inputEl3);
+
+		trEl.appendChild(tdEl1);
+		trEl.appendChild(tdEl2);
+		trEl.appendChild(tdEl3);
+		trEl.appendChild(tdEl4);
+		trEl.appendChild(tdEl5);
+
+
+
+		function ClickToAdd() {
+			// let countNumEl = document.getElementById("countNum");
+			pEl.textContent = parseInt(pEl.textContent) + 1;
+			tBodyEl.appendChild(trEl.cloneNode(true));
+			textareaEl.name = "input0name" + pEl.textContent;
+			inputEl1.name = "input1name" + pEl.textContent;
+			inputEl2.name = "input2name" + pEl.textContent;
+			inputEl3.name = "input3name" + pEl.textContent;
+			// countNumEl.textContent = pEl.textContent + 1;
+			// countNumEl.value = pEl.textContent;
+			console.log(textareaEl, inputEl1, inputEl2, inputEl3);
+		}
+
+		console.log(trEl);
+
+		// Calculate toltal amount
+		let total = 0;
+		let totalValueEl = document.getElementById('1');
+		total = parseInt(totalValueEl.value);
+		// function calculateTotal() {
+		// 	let x = document.getElementById('calcTotal');
+
+		// 	for (let i = 2; i <= parseInt(pEl.textContent); i++) {
+		// 		console.log(i);
+		// 		let amountEl = document.getElementById(i + '');
+		// 		total = total + parseInt(amountEl.value);
+		// 	}
+		// 	x.value = total;
+		// }
+	</script> -->
+</body>
+
+</html>
